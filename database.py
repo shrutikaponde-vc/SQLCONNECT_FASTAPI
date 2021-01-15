@@ -1,5 +1,6 @@
 #create sql alchemy parts
 #no1
+import os
 from configparser import ConfigParser
 
 from sqlalchemy import create_engine
@@ -31,7 +32,7 @@ print(DB)
 '''
 import configparser
 config=configparser.ConfigParser();
-config.read(r'C:\Users\KIIT\PycharmProjects\jan\SQLCONNECT\config.ini')
+config.read(os.path.join(os.path.dirname(__file__),'config.ini'))
 database_type=str(config.get('demo','database_type'))
 database_user=str(config.get('demo','database_user'))
 database_pass=str(config.get('demo','database_pass'))
